@@ -1,0 +1,2078 @@
+> show dbs
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+> use test
+switched to db test
+> db.users.insert({"something":"n
+WriteResult({ "nInserted" : 1 })
+>
+>
+> db.users.find({"movie_name":{$eq:"Drishyam"}})
+{ "_id" : ObjectId("619d2bb7a07e9e8ad2f84548"), "id" :
+riller", "production_year" : 2010, "budget" : 13354 }
+>
+>
+> db.users.find({"movie_name":{$ne:"Drishyam"}})
+{ "_id" : ObjectId("619d2b8ed0e4d935d3ddf4b5"), "something" : "nothing" }
+{ "_id" : ObjectId("619d2bb7a07e9e8ad2f8453d"), "id" : 1, "movie_name" : "Witness to Murder", "movie_genre" : "Crime|Dra
+ma|Film-Noir|Thriller", "production_year" : 2010, "budget" : 16788 }
+{ "_id" : ObjectId("619d2bb7a07e9e8ad2f8453e"), "id" : 2, "movie_name" : "Late Phases", "movie_genre" : "Drama|Horror",
+"production_year" : 2006, "budget" : 18192 }
+{ "_id" : ObjectId("619d2bb7a07e9e8ad2f8453f"), "id" : 3, "movie_name" : "Impostors, The", "movie_genre" : "Comedy", "pr
+oduction_year" : 2011, "budget" : 9075 }
+{ "_id" : ObjectId("619d2bb7a07e9e8ad2f84540"), "id" : 4, "movie_name" : "Life for Sale (Kotirauha)", "movie_genre" : "D
+rama", "production_year" : 1988, "budget" : 19674 }
+{ "_id" : ObjectId("619d2bb7a07e9e8ad2f84541"), "id" : 5, "movie_name" : "Dilettante, La", "movie_genre" : "Comedy", "pr
+oduction_year" : 1992, "budget" : 13651 }
+{ "_id" : ObjectId("619d2bb7a07e9e8ad2f84542"), "id" : 6, "movie_name" : "Joy of Sex", "movie_genre" : "Comedy|Romance",
+ "production_year" : 1997, "budget" : 14336 }
+{ "_id" : ObjectId("619d2bb7a07e9e8ad2f84543"), "id" : 7, "movie_name" : "Moog", "movie_genre" : "Documentary|Musical",
+"production_year" : 2001, "budget" : 11001 }
+{ "_id" : ObjectId("619d2bb7a07e9e8ad2f84544"), "id" : 8, "movie_name" : "Return to Me", "movie_genre" : "Drama|Romance"
+, "production_year" : 2000, "budget" : 9676 }
+{ "_id" : ObjectId("619d2bb7a07e9e8ad2f84545"), "id" : 9, "movie_name" : "Golden Christmas, A", "movie_genre" : "Childre
+n|Comedy|Romance", "production_year" : 1992, "budget" : 17212 }
+{ "_id" : ObjectId("619d2bb7a07e9e8ad2f84546"), "id" : 10, "movie_name" : "Sky's the Limit, The", "movie_genre" : "Comed
+y|Musical|Romance", "production_year" : 2009, "budget" : 18762 }
+{ "_id" : ObjectId("619d2bb7a07e9e8ad2f84547"), "id" : 11, "movie_name" : "Body Bags", "movie_genre" : "Comedy|Horror|Sc
+i-Fi|Thriller", "production_year" : 2010, "budget" : 16318 }
+{ "_id" : ObjectId("619d2bb7a07e9e8ad2f84549"), "id" : 13, "movie_name" : "Set-Up, The", "movie_genre" : "Drama|Film-Noi
+r|Romance", "production_year" : 2007, "budget" : 11983 }
+{ "_id" : ObjectId("619d2bb7a07e9e8ad2f8454a"), "id" : 14, "movie_name" : "Detective (Détective)", "movie_genre" : "Crim
+e|Drama", "production_year" : 2003, "budget" : 19068 }
+{ "_id" : ObjectId("619d2bb7a07e9e8ad2f8454b"), "id" : 15, "movie_name" : "Blank Generation, The", "movie_genre" : "Musi
+cal", "production_year" : 2001, "budget" : 16500 }
+{ "_id" : ObjectId("619d2bb7a07e9e8ad2f8454c"), "id" : 16, "movie_name" : "Evilspeak", "movie_genre" : "Horror|Sci-Fi",
+"production_year" : 2006, "budget" : 19976 }
+{ "_id" : ObjectId("619d2bb7a07e9e8ad2f8454d"), "id" : 17, "movie_name" : "John Mulaney: New In Town", "movie_genre" : "
+Comedy", "production_year" : 2012, "budget" : 10235 }
+{ "_id" : ObjectId("619d2bb7a07e9e8ad2f8454e"), "id" : 18, "movie_name" : "One-Way Ticket to Mombasa (Menolippu Mombasaa
+n)", "movie_genre" : "Comedy|Drama", "production_year" : 2005, "budget" : 10307 }
+{ "_id" : ObjectId("619d2bb7a07e9e8ad2f8454f"), "id" : 19, "movie_name" : "Frozen Hell (Jäämarssi) ", "movie_genre" : "D
+ocumentary|War", "production_year" : 2006, "budget" : 11874 }
+{ "_id" : ObjectId("619d2bb7a07e9e8ad2f84550"), "id" : 20, "movie_name" : "The Prince", "movie_genre" : "Action|Thriller
+", "production_year" : 2006, "budget" : 18051 }
+Type "it" for more
+>>
+>
+>
+> db.users.find({"budget":{$gt:11000}}).pretty()
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8453d"),
+        "id" : 1,
+        "movie_name" : "Witness to Murder",
+        "movie_genre" : "Crime|Drama|Film-Noir|Thrille
+        "production_year" : 2010,
+        "budget" : 16788
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8453e"),
+        "id" : 2,
+        "movie_name" : "Late Phases",
+        "movie_genre" : "Drama|Horror",
+        "production_year" : 2006,
+        "budget" : 18192
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84540"),
+        "id" : 4,
+        "movie_name" : "Life for Sale (Kotirauha)",
+        "movie_genre" : "Drama",
+        "production_year" : 1988,
+        "budget" : 19674
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84541"),
+        "id" : 5,
+        "movie_name" : "Dilettante, La",
+        "movie_genre" : "Comedy",
+        "production_year" : 1992,
+        "budget" : 13651
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84542"),
+        "id" : 6,
+        "movie_name" : "Joy of Sex",
+        "movie_genre" : "Comedy|Romance",
+        "production_year" : 1997,
+        "budget" : 14336
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84543"),
+        "id" : 7,
+        "movie_name" : "Moog",
+        "movie_genre" : "Documentary|Musical",
+        "production_year" : 2001,
+        "budget" : 11001
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84545"),
+        "id" : 9,
+        "movie_name" : "Golden Christmas, A",
+        "movie_genre" : "Children|Comedy|Romance",
+        "production_year" : 1992,
+        "budget" : 17212
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84546"),
+        "id" : 10,
+        "movie_name" : "Sky's the Limit, The",
+        "movie_genre" : "Comedy|Musical|Romance",
+        "production_year" : 2009,
+        "budget" : 18762
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84547"),
+        "id" : 11,
+        "movie_name" : "Body Bags",
+        "movie_genre" : "Comedy|Horror|Sci-Fi|Thriller
+        "production_year" : 2010,
+        "budget" : 16318
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84548"),
+        "id" : 12,
+        "movie_name" : "Drishyam",
+        "movie_genre" : "Children|Drama|Thriller",
+        "production_year" : 2010,
+        "budget" : 13354
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84549"),
+        "id" : 13,
+        "movie_name" : "Set-Up, The",
+        "movie_genre" : "Drama|Film-Noir|Romance",
+        "production_year" : 2007,
+        "budget" : 11983
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8454a"),
+        "id" : 14,
+        "movie_name" : "Detective (Détective)",
+        "movie_genre" : "Crime|Drama",
+        "production_year" : 2003,
+        "budget" : 19068
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8454b"),
+        "id" : 15,
+        "movie_name" : "Blank Generation, The",
+        "movie_genre" : "Musical",
+        "production_year" : 2001,
+        "budget" : 16500
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8454c"),
+        "id" : 16,
+        "movie_name" : "Evilspeak",
+        "movie_genre" : "Horror|Sci-Fi",
+        "production_year" : 2006,
+        "budget" : 19976
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8454f"),
+        "id" : 19,
+        "movie_name" : "Frozen Hell (Jäämarssi) ",
+        "movie_genre" : "Documentary|War",
+        "production_year" : 2006,
+        "budget" : 11874
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84550"),
+        "id" : 20,
+        "movie_name" : "The Prince",
+        "movie_genre" : "Action|Thriller",
+        "production_year" : 2006,
+        "budget" : 18051
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84551"),
+        "id" : 21,
+        "movie_name" : "Night of the Hunter, The",
+        "movie_genre" : "Drama|Film-Noir|Thriller",
+        "production_year" : 2004,
+        "budget" : 11233
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84552"),
+        "id" : 22,
+        "movie_name" : "Suez",
+        "movie_genre" : "Drama|Romance",
+        "production_year" : 2005,
+        "budget" : 15381
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84553"),
+        "id" : 23,
+        "movie_name" : "Footloose",
+        "movie_genre" : "Comedy|Drama|Musical",
+        "production_year" : 1993,
+        "budget" : 11316
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84554"),
+        "id" : 24,
+        "movie_name" : "Along Came Jones",
+        "movie_genre" : "Comedy|Romance|Western",
+        "production_year" : 1993,
+        "budget" : 15958
+}
+Type "it" for more
+>
+>
+>
+>
+> db.users.find({"budget":{$gte:11000}}).pretty()
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8453d"),
+        "id" : 1,
+        "movie_name" : "Witness to Murder",
+        "movie_genre" : "Crime|Drama|Film-Noir|Thriller"
+        "production_year" : 2010,
+        "budget" : 16788
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8453e"),
+        "id" : 2,
+        "movie_name" : "Late Phases",
+        "movie_genre" : "Drama|Horror",
+        "production_year" : 2006,
+        "budget" : 18192
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84540"),
+        "id" : 4,
+        "movie_name" : "Life for Sale (Kotirauha)",
+        "movie_genre" : "Drama",
+        "production_year" : 1988,
+        "budget" : 19674
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84541"),
+        "id" : 5,
+        "movie_name" : "Dilettante, La",
+        "movie_genre" : "Comedy",
+        "production_year" : 1992,
+        "budget" : 13651
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84542"),
+        "id" : 6,
+        "movie_name" : "Joy of Sex",
+        "movie_genre" : "Comedy|Romance",
+        "production_year" : 1997,
+        "budget" : 14336
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84543"),
+        "id" : 7,
+        "movie_name" : "Moog",
+        "movie_genre" : "Documentary|Musical",
+        "production_year" : 2001,
+        "budget" : 11001
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84545"),
+        "id" : 9,
+        "movie_name" : "Golden Christmas, A",
+        "movie_genre" : "Children|Comedy|Romance",
+        "production_year" : 1992,
+        "budget" : 17212
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84546"),
+        "id" : 10,
+        "movie_name" : "Sky's the Limit, The",
+        "movie_genre" : "Comedy|Musical|Romance",
+        "production_year" : 2009,
+        "budget" : 18762
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84547"),
+        "id" : 11,
+        "movie_name" : "Body Bags",
+        "movie_genre" : "Comedy|Horror|Sci-Fi|Thriller",
+        "production_year" : 2010,
+        "budget" : 16318
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84548"),
+        "id" : 12,
+        "movie_name" : "Drishyam",
+        "movie_genre" : "Children|Drama|Thriller",
+        "production_year" : 2010,
+        "budget" : 13354
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84549"),
+        "id" : 13,
+        "movie_name" : "Set-Up, The",
+        "movie_genre" : "Drama|Film-Noir|Romance",
+        "production_year" : 2007,
+        "budget" : 11983
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8454a"),
+        "id" : 14,
+        "movie_name" : "Detective (Détective)",
+        "movie_genre" : "Crime|Drama",
+        "production_year" : 2003,
+        "budget" : 19068
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8454b"),
+        "id" : 15,
+        "movie_name" : "Blank Generation, The",
+        "movie_genre" : "Musical",
+        "production_year" : 2001,
+        "budget" : 16500
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8454c"),
+        "id" : 16,
+        "movie_name" : "Evilspeak",
+        "movie_genre" : "Horror|Sci-Fi",
+        "production_year" : 2006,
+        "budget" : 19976
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8454f"),
+        "id" : 19,
+        "movie_name" : "Frozen Hell (Jäämarssi) ",
+        "movie_genre" : "Documentary|War",
+        "production_year" : 2006,
+        "budget" : 11874
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84550"),
+        "id" : 20,
+        "movie_name" : "The Prince",
+        "movie_genre" : "Action|Thriller",
+        "production_year" : 2006,
+        "budget" : 18051
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84551"),
+        "id" : 21,
+        "movie_name" : "Night of the Hunter, The",
+        "movie_genre" : "Drama|Film-Noir|Thriller",
+        "production_year" : 2004,
+        "budget" : 11233
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84552"),
+        "id" : 22,
+        "movie_name" : "Suez",
+        "movie_genre" : "Drama|Romance",
+        "production_year" : 2005,
+        "budget" : 15381
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84553"),
+        "id" : 23,
+        "movie_name" : "Footloose",
+        "movie_genre" : "Comedy|Drama|Musical",
+        "production_year" : 1993,
+        "budget" : 11316
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84554"),
+        "id" : 24,
+        "movie_name" : "Along Came Jones",
+        "movie_genre" : "Comedy|Romance|Western",
+        "production_year" : 1993,
+        "budget" : 15958
+}
+Type "it" for more
+>
+>
+>
+>
+> db.users.find({"budget":{$lt:11000}}).pretty()
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8453f"),
+        "id" : 3,
+        "movie_name" : "Impostors, The",
+        "movie_genre" : "Comedy",
+        "production_year" : 2011,
+        "budget" : 9075
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84544"),
+        "id" : 8,
+        "movie_name" : "Return to Me",
+        "movie_genre" : "Drama|Romance",
+        "production_year" : 2000,
+        "budget" : 9676
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8454d"),
+        "id" : 17,
+        "movie_name" : "John Mulaney: New In Town",
+        "movie_genre" : "Comedy",
+        "production_year" : 2012,
+        "budget" : 10235
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8454e"),
+        "id" : 18,
+        "movie_name" : "One-Way Ticket to Mombasa (Menolippu Mombasaan)",
+        "movie_genre" : "Comedy|Drama",
+        "production_year" : 2005,
+        "budget" : 10307
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8455d"),
+        "id" : 33,
+        "movie_name" : "World Is Not Enough, The",
+        "movie_genre" : "Action|Adventure|Thriller",
+        "production_year" : 1997,
+        "budget" : 9558
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8455f"),
+        "id" : 35,
+        "movie_name" : "Shadow of the Holy Book (Pyhän kirjan varjo)",
+        "movie_genre" : "Documentary",
+        "production_year" : 2001,
+        "budget" : 10722
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84561"),
+        "id" : 37,
+        "movie_name" : "Malone",
+        "movie_genre" : "Action|Drama|Thriller",
+        "production_year" : 1992,
+        "budget" : 9490
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8456a"),
+        "id" : 46,
+        "movie_name" : "Betty",
+        "movie_genre" : "Drama",
+        "production_year" : 1994,
+        "budget" : 10854
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8456b"),
+        "id" : 47,
+        "movie_name" : "Love Sick Love",
+        "movie_genre" : "Thriller",
+        "production_year" : 1987,
+        "budget" : 9834
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84572"),
+        "id" : 54,
+        "movie_name" : "Save the Tiger",
+        "movie_genre" : "Drama",
+        "production_year" : 1993,
+        "budget" : 9880
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84577"),
+        "id" : 59,
+        "movie_name" : "The Jackie Robinson Story",
+        "movie_genre" : "Children|Drama",
+        "production_year" : 1993,
+        "budget" : 10682
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84579"),
+        "id" : 61,
+        "movie_name" : "Take the Trash",
+        "movie_genre" : "Comedy",
+        "production_year" : 1998,
+        "budget" : 9965
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84580"),
+        "id" : 68,
+        "movie_name" : "Strangers When We Meet",
+        "movie_genre" : "Drama",
+        "production_year" : 1999,
+        "budget" : 10078
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84588"),
+        "id" : 76,
+        "movie_name" : "Planet of Snail",
+        "movie_genre" : "Documentary|Drama",
+        "production_year" : 2008,
+        "budget" : 10970
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84592"),
+        "id" : 86,
+        "movie_name" : "Four Seasons, The",
+        "movie_genre" : "Comedy|Drama",
+        "production_year" : 1991,
+        "budget" : 10446
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84596"),
+        "id" : 90,
+        "movie_name" : "21",
+        "movie_genre" : "Crime|Drama|Romance|Thriller",
+        "production_year" : 1991,
+        "budget" : 10726
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f845a2"),
+        "id" : 102,
+        "movie_name" : "Miss Annie Rooney",
+        "movie_genre" : "Drama",
+        "production_year" : 2012,
+        "budget" : 9013
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f845a3"),
+        "id" : 103,
+        "movie_name" : "Introduction to Physics, An",
+        "movie_genre" : "Adventure|Comedy|Documentary|Fantasy",
+        "production_year" : 2001,
+        "budget" : 9798
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f845a5"),
+        "id" : 105,
+        "movie_name" : "Holy Matrimony",
+        "movie_genre" : "Comedy|Crime",
+        "production_year" : 2000,
+        "budget" : 10921
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f845b3"),
+        "id" : 119,
+        "movie_name" : "Bad Lieutenant: Port of Call New Orleans",
+        "movie_genre" : "Crime|Drama",
+        "production_year" : 1993,
+        "budget" : 10367
+}
+Type "it" for more
+>
+>
+> db.users.find({"budget":{$gte:11000}}).pretty()
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8453d"),
+        "id" : 1,
+        "movie_name" : "Witness to Murder",
+        "movie_genre" : "Crime|Drama|Film-Noir|Thriller",
+        "production_year" : 2010,
+        "budget" : 16788
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8453e"),
+        "id" : 2,
+        "movie_name" : "Late Phases",
+        "movie_genre" : "Drama|Horror",
+        "production_year" : 2006,
+        "budget" : 18192
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84540"),
+        "id" : 4,
+        "movie_name" : "Life for Sale (Kotirauha)",
+        "movie_genre" : "Drama",
+        "production_year" : 1988,
+        "budget" : 19674
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84541"),
+        "id" : 5,
+        "movie_name" : "Dilettante, La",
+        "movie_genre" : "Comedy",
+        "production_year" : 1992,
+        "budget" : 13651
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84542"),
+        "id" : 6,
+        "movie_name" : "Joy of Sex",
+        "movie_genre" : "Comedy|Romance",
+        "production_year" : 1997,
+        "budget" : 14336
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84543"),
+        "id" : 7,
+        "movie_name" : "Moog",
+        "movie_genre" : "Documentary|Musical",
+        "production_year" : 2001,
+        "budget" : 11001
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84545"),
+        "id" : 9,
+        "movie_name" : "Golden Christmas, A",
+        "movie_genre" : "Children|Comedy|Romance",
+        "production_year" : 1992,
+        "budget" : 17212
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84546"),
+        "id" : 10,
+        "movie_name" : "Sky's the Limit, The",
+        "movie_genre" : "Comedy|Musical|Romance",
+        "production_year" : 2009,
+        "budget" : 18762
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84547"),
+        "id" : 11,
+        "movie_name" : "Body Bags",
+        "movie_genre" : "Comedy|Horror|Sci-Fi|Thriller",
+        "production_year" : 2010,
+        "budget" : 16318
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84548"),
+        "id" : 12,
+        "movie_name" : "Drishyam",
+        "movie_genre" : "Children|Drama|Thriller",
+        "production_year" : 2010,
+        "budget" : 13354
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84549"),
+        "id" : 13,
+        "movie_name" : "Set-Up, The",
+        "movie_genre" : "Drama|Film-Noir|Romance",
+        "production_year" : 2007,
+        "budget" : 11983
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8454a"),
+        "id" : 14,
+        "movie_name" : "Detective (Détective)",
+        "movie_genre" : "Crime|Drama",
+        "production_year" : 2003,
+        "budget" : 19068
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8454b"),
+        "id" : 15,
+        "movie_name" : "Blank Generation, The",
+        "movie_genre" : "Musical",
+        "production_year" : 2001,
+        "budget" : 16500
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8454c"),
+        "id" : 16,
+        "movie_name" : "Evilspeak",
+        "movie_genre" : "Horror|Sci-Fi",
+        "production_year" : 2006,
+        "budget" : 19976
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8454f"),
+        "id" : 19,
+        "movie_name" : "Frozen Hell (Jäämarssi) ",
+        "movie_genre" : "Documentary|War",
+        "production_year" : 2006,
+        "budget" : 11874
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84550"),
+        "id" : 20,
+        "movie_name" : "The Prince",
+        "movie_genre" : "Action|Thriller",
+        "production_year" : 2006,
+        "budget" : 18051
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84551"),
+        "id" : 21,
+        "movie_name" : "Night of the Hunter, The",
+        "movie_genre" : "Drama|Film-Noir|Thriller",
+        "production_year" : 2004,
+        "budget" : 11233
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84552"),
+        "id" : 22,
+        "movie_name" : "Suez",
+        "movie_genre" : "Drama|Romance",
+        "production_year" : 2005,
+        "budget" : 15381
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84553"),
+        "id" : 23,
+        "movie_name" : "Footloose",
+        "movie_genre" : "Comedy|Drama|Musical",
+        "production_year" : 1993,
+        "budget" : 11316
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84554"),
+        "id" : 24,
+        "movie_name" : "Along Came Jones",
+        "movie_genre" : "Comedy|Romance|Western",
+        "production_year" : 1993,
+        "budget" : 15958
+}
+Type "it" for more
+>
+>
+> db.users.find({"budget":{$lt:11000}}).pretty()
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8453f"),
+        "id" : 3,
+        "movie_name" : "Impostors, The",
+        "movie_genre" : "Comedy",
+        "production_year" : 2011,
+        "budget" : 9075
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84544"),
+        "id" : 8,
+        "movie_name" : "Return to Me",
+        "movie_genre" : "Drama|Romance",
+        "production_year" : 2000,
+        "budget" : 9676
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8454d"),
+        "id" : 17,
+        "movie_name" : "John Mulaney: New In Town",
+        "movie_genre" : "Comedy",
+        "production_year" : 2012,
+        "budget" : 10235
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8454e"),
+        "id" : 18,
+        "movie_name" : "One-Way Ticket to Mombasa (Menolippu Mombasaan)",
+        "movie_genre" : "Comedy|Drama",
+        "production_year" : 2005,
+        "budget" : 10307
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8455d"),
+        "id" : 33,
+        "movie_name" : "World Is Not Enough, The",
+        "movie_genre" : "Action|Adventure|Thriller",
+        "production_year" : 1997,
+        "budget" : 9558
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8455f"),
+        "id" : 35,
+        "movie_name" : "Shadow of the Holy Book (Pyhän kirjan varjo)",
+        "movie_genre" : "Documentary",
+        "production_year" : 2001,
+        "budget" : 10722
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84561"),
+        "id" : 37,
+        "movie_name" : "Malone",
+        "movie_genre" : "Action|Drama|Thriller",
+        "production_year" : 1992,
+        "budget" : 9490
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8456a"),
+        "id" : 46,
+        "movie_name" : "Betty",
+        "movie_genre" : "Drama",
+        "production_year" : 1994,
+        "budget" : 10854
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8456b"),
+        "id" : 47,
+        "movie_name" : "Love Sick Love",
+        "movie_genre" : "Thriller",
+        "production_year" : 1987,
+        "budget" : 9834
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84572"),
+        "id" : 54,
+        "movie_name" : "Save the Tiger",
+        "movie_genre" : "Drama",
+        "production_year" : 1993,
+        "budget" : 9880
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84577"),
+        "id" : 59,
+        "movie_name" : "The Jackie Robinson Story",
+        "movie_genre" : "Children|Drama",
+        "production_year" : 1993,
+        "budget" : 10682
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84579"),
+        "id" : 61,
+        "movie_name" : "Take the Trash",
+        "movie_genre" : "Comedy",
+        "production_year" : 1998,
+        "budget" : 9965
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84580"),
+        "id" : 68,
+        "movie_name" : "Strangers When We Meet",
+        "movie_genre" : "Drama",
+        "production_year" : 1999,
+        "budget" : 10078
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84588"),
+        "id" : 76,
+        "movie_name" : "Planet of Snail",
+        "movie_genre" : "Documentary|Drama",
+        "production_year" : 2008,
+        "budget" : 10970
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84592"),
+        "id" : 86,
+        "movie_name" : "Four Seasons, The",
+        "movie_genre" : "Comedy|Drama",
+        "production_year" : 1991,
+        "budget" : 10446
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84596"),
+        "id" : 90,
+        "movie_name" : "21",
+        "movie_genre" : "Crime|Drama|Romance|Thriller",
+        "production_year" : 1991,
+        "budget" : 10726
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f845a2"),
+        "id" : 102,
+        "movie_name" : "Miss Annie Rooney",
+        "movie_genre" : "Drama",
+        "production_year" : 2012,
+        "budget" : 9013
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f845a3"),
+        "id" : 103,
+        "movie_name" : "Introduction to Physics, An",
+        "movie_genre" : "Adventure|Comedy|Documentary|Fantasy",
+        "production_year" : 2001,
+        "budget" : 9798
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f845a5"),
+        "id" : 105,
+        "movie_name" : "Holy Matrimony",
+        "movie_genre" : "Comedy|Crime",
+        "production_year" : 2000,
+        "budget" : 10921
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f845b3"),
+        "id" : 119,
+        "movie_name" : "Bad Lieutenant: Port of Call New Orleans",
+        "movie_genre" : "Crime|Drama",
+        "production_year" : 1993,
+        "budget" : 10367
+}
+Type "it" for more
+>
+>
+> db.users.find({"budget":{$lte:11000}}).pretty()
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8453f"),
+        "id" : 3,
+        "movie_name" : "Impostors, The",
+        "movie_genre" : "Comedy",
+        "production_year" : 2011,
+        "budget" : 9075
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84544"),
+        "id" : 8,
+        "movie_name" : "Return to Me",
+        "movie_genre" : "Drama|Romance",
+        "production_year" : 2000,
+        "budget" : 9676
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8454d"),
+        "id" : 17,
+        "movie_name" : "John Mulaney: New In Town",
+        "movie_genre" : "Comedy",
+        "production_year" : 2012,
+        "budget" : 10235
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8454e"),
+        "id" : 18,
+        "movie_name" : "One-Way Ticket to Mombasa (Menolippu Mombasaan)",
+        "movie_genre" : "Comedy|Drama",
+        "production_year" : 2005,
+        "budget" : 10307
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8455d"),
+        "id" : 33,
+        "movie_name" : "World Is Not Enough, The",
+        "movie_genre" : "Action|Adventure|Thriller",
+        "production_year" : 1997,
+        "budget" : 9558
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8455f"),
+        "id" : 35,
+        "movie_name" : "Shadow of the Holy Book (Pyhän kirjan varjo)",
+        "movie_genre" : "Documentary",
+        "production_year" : 2001,
+        "budget" : 10722
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84561"),
+        "id" : 37,
+        "movie_name" : "Malone",
+        "movie_genre" : "Action|Drama|Thriller",
+        "production_year" : 1992,
+        "budget" : 9490
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8456a"),
+        "id" : 46,
+        "movie_name" : "Betty",
+        "movie_genre" : "Drama",
+        "production_year" : 1994,
+        "budget" : 10854
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8456b"),
+        "id" : 47,
+        "movie_name" : "Love Sick Love",
+        "movie_genre" : "Thriller",
+        "production_year" : 1987,
+        "budget" : 9834
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84572"),
+        "id" : 54,
+        "movie_name" : "Save the Tiger",
+        "movie_genre" : "Drama",
+        "production_year" : 1993,
+        "budget" : 9880
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84577"),
+        "id" : 59,
+        "movie_name" : "The Jackie Robinson Story",
+        "movie_genre" : "Children|Drama",
+        "production_year" : 1993,
+        "budget" : 10682
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84579"),
+        "id" : 61,
+        "movie_name" : "Take the Trash",
+        "movie_genre" : "Comedy",
+        "production_year" : 1998,
+        "budget" : 9965
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84580"),
+        "id" : 68,
+        "movie_name" : "Strangers When We Meet",
+        "movie_genre" : "Drama",
+        "production_year" : 1999,
+        "budget" : 10078
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84588"),
+        "id" : 76,
+        "movie_name" : "Planet of Snail",
+        "movie_genre" : "Documentary|Drama",
+        "production_year" : 2008,
+        "budget" : 10970
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84592"),
+        "id" : 86,
+        "movie_name" : "Four Seasons, The",
+        "movie_genre" : "Comedy|Drama",
+        "production_year" : 1991,
+        "budget" : 10446
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84596"),
+        "id" : 90,
+        "movie_name" : "21",
+        "movie_genre" : "Crime|Drama|Romance|Thriller",
+        "production_year" : 1991,
+        "budget" : 10726
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f845a2"),
+        "id" : 102,
+        "movie_name" : "Miss Annie Rooney",
+        "movie_genre" : "Drama",
+        "production_year" : 2012,
+        "budget" : 9013
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f845a3"),
+        "id" : 103,
+        "movie_name" : "Introduction to Physics, An",
+        "movie_genre" : "Adventure|Comedy|Documentary|Fantasy",
+        "production_year" : 2001,
+        "budget" : 9798
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f845a5"),
+        "id" : 105,
+        "movie_name" : "Holy Matrimony",
+        "movie_genre" : "Comedy|Crime",
+        "production_year" : 2000,
+        "budget" : 10921
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f845b3"),
+        "id" : 119,
+        "movie_name" : "Bad Lieutenant: Port of Call New Orleans",
+        "movie_genre" : "Crime|Drama",
+        "production_year" : 1993,
+        "budget" : 10367
+}
+Type "it" for more
+>
+>
+>
+> db.users.find({$and:[{"production_year":{$gt:2000}},{"budget":{$gt:10000}}]}).pretty()
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8453d"),
+        "id" : 1,
+        "movie_name" : "Witness to Murder",
+        "movie_genre" : "Crime|Drama|Film-Noir|Thriller",
+        "production_year" : 2010,
+        "budget" : 16788
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8453e"),
+        "id" : 2,
+        "movie_name" : "Late Phases",
+        "movie_genre" : "Drama|Horror",
+        "production_year" : 2006,
+        "budget" : 18192
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84543"),
+        "id" : 7,
+        "movie_name" : "Moog",
+        "movie_genre" : "Documentary|Musical",
+        "production_year" : 2001,
+        "budget" : 11001
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84546"),
+        "id" : 10,
+        "movie_name" : "Sky's the Limit, The",
+        "movie_genre" : "Comedy|Musical|Romance",
+        "production_year" : 2009,
+        "budget" : 18762
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84547"),
+        "id" : 11,
+        "movie_name" : "Body Bags",
+        "movie_genre" : "Comedy|Horror|Sci-Fi|Thriller",
+        "production_year" : 2010,
+        "budget" : 16318
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84548"),
+        "id" : 12,
+        "movie_name" : "Drishyam",
+        "movie_genre" : "Children|Drama|Thriller",
+        "production_year" : 2010,
+        "budget" : 13354
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84549"),
+        "id" : 13,
+        "movie_name" : "Set-Up, The",
+        "movie_genre" : "Drama|Film-Noir|Romance",
+        "production_year" : 2007,
+        "budget" : 11983
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8454a"),
+        "id" : 14,
+        "movie_name" : "Detective (Détective)",
+        "movie_genre" : "Crime|Drama",
+        "production_year" : 2003,
+        "budget" : 19068
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8454b"),
+        "id" : 15,
+        "movie_name" : "Blank Generation, The",
+        "movie_genre" : "Musical",
+        "production_year" : 2001,
+        "budget" : 16500
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8454c"),
+        "id" : 16,
+        "movie_name" : "Evilspeak",
+        "movie_genre" : "Horror|Sci-Fi",
+        "production_year" : 2006,
+        "budget" : 19976
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8454d"),
+        "id" : 17,
+        "movie_name" : "John Mulaney: New In Town",
+        "movie_genre" : "Comedy",
+        "production_year" : 2012,
+        "budget" : 10235
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8454e"),
+        "id" : 18,
+        "movie_name" : "One-Way Ticket to Mombasa (Menolippu Mombasaan)",
+        "movie_genre" : "Comedy|Drama",
+        "production_year" : 2005,
+        "budget" : 10307
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8454f"),
+        "id" : 19,
+        "movie_name" : "Frozen Hell (Jäämarssi) ",
+        "movie_genre" : "Documentary|War",
+        "production_year" : 2006,
+        "budget" : 11874
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84550"),
+        "id" : 20,
+        "movie_name" : "The Prince",
+        "movie_genre" : "Action|Thriller",
+        "production_year" : 2006,
+        "budget" : 18051
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84551"),
+        "id" : 21,
+        "movie_name" : "Night of the Hunter, The",
+        "movie_genre" : "Drama|Film-Noir|Thriller",
+        "production_year" : 2004,
+        "budget" : 11233
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84552"),
+        "id" : 22,
+        "movie_name" : "Suez",
+        "movie_genre" : "Drama|Romance",
+        "production_year" : 2005,
+        "budget" : 15381
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84557"),
+        "id" : 27,
+        "movie_name" : "Kansas City",
+        "movie_genre" : "Crime|Drama|Musical|Thriller",
+        "production_year" : 2005,
+        "budget" : 11656
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84558"),
+        "id" : 28,
+        "movie_name" : "Swimming Pool, The (La piscine)",
+        "movie_genre" : "Crime|Drama",
+        "production_year" : 2007,
+        "budget" : 16412
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84559"),
+        "id" : 29,
+        "movie_name" : "Demon Wind",
+        "movie_genre" : "Horror",
+        "production_year" : 2010,
+        "budget" : 16139
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8455a"),
+        "id" : 30,
+        "movie_name" : "Ernest Goes to School",
+        "movie_genre" : "Children|Comedy|Drama",
+        "production_year" : 2010,
+        "budget" : 12734
+}
+Type "it" for more
+>
+>
+>
+> db.users.find({$or:[{"production_year":{$gt:2000}},{"budget":{$gt:10000}}]}).pretty()
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8453d"),
+        "id" : 1,
+        "movie_name" : "Witness to Murder",
+        "movie_genre" : "Crime|Drama|Film-Noir|Thriller",
+        "production_year" : 2010,
+        "budget" : 16788
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8453e"),
+        "id" : 2,
+        "movie_name" : "Late Phases",
+        "movie_genre" : "Drama|Horror",
+        "production_year" : 2006,
+        "budget" : 18192
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8453f"),
+        "id" : 3,
+        "movie_name" : "Impostors, The",
+        "movie_genre" : "Comedy",
+        "production_year" : 2011,
+        "budget" : 9075
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84540"),
+        "id" : 4,
+        "movie_name" : "Life for Sale (Kotirauha)",
+        "movie_genre" : "Drama",
+        "production_year" : 1988,
+        "budget" : 19674
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84541"),
+        "id" : 5,
+        "movie_name" : "Dilettante, La",
+        "movie_genre" : "Comedy",
+        "production_year" : 1992,
+        "budget" : 13651
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84542"),
+        "id" : 6,
+        "movie_name" : "Joy of Sex",
+        "movie_genre" : "Comedy|Romance",
+        "production_year" : 1997,
+        "budget" : 14336
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84543"),
+        "id" : 7,
+        "movie_name" : "Moog",
+        "movie_genre" : "Documentary|Musical",
+        "production_year" : 2001,
+        "budget" : 11001
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84545"),
+        "id" : 9,
+        "movie_name" : "Golden Christmas, A",
+        "movie_genre" : "Children|Comedy|Romance",
+        "production_year" : 1992,
+        "budget" : 17212
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84546"),
+        "id" : 10,
+        "movie_name" : "Sky's the Limit, The",
+        "movie_genre" : "Comedy|Musical|Romance",
+        "production_year" : 2009,
+        "budget" : 18762
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84547"),
+        "id" : 11,
+        "movie_name" : "Body Bags",
+        "movie_genre" : "Comedy|Horror|Sci-Fi|Thriller",
+        "production_year" : 2010,
+        "budget" : 16318
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84548"),
+        "id" : 12,
+        "movie_name" : "Drishyam",
+        "movie_genre" : "Children|Drama|Thriller",
+        "production_year" : 2010,
+        "budget" : 13354
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84549"),
+        "id" : 13,
+        "movie_name" : "Set-Up, The",
+        "movie_genre" : "Drama|Film-Noir|Romance",
+        "production_year" : 2007,
+        "budget" : 11983
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8454a"),
+        "id" : 14,
+        "movie_name" : "Detective (Détective)",
+        "movie_genre" : "Crime|Drama",
+        "production_year" : 2003,
+        "budget" : 19068
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8454b"),
+        "id" : 15,
+        "movie_name" : "Blank Generation, The",
+        "movie_genre" : "Musical",
+        "production_year" : 2001,
+        "budget" : 16500
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8454c"),
+        "id" : 16,
+        "movie_name" : "Evilspeak",
+        "movie_genre" : "Horror|Sci-Fi",
+        "production_year" : 2006,
+        "budget" : 19976
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8454d"),
+        "id" : 17,
+        "movie_name" : "John Mulaney: New In Town",
+        "movie_genre" : "Comedy",
+        "production_year" : 2012,
+        "budget" : 10235
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8454e"),
+        "id" : 18,
+        "movie_name" : "One-Way Ticket to Mombasa (Menolippu Mombasaan)",
+        "movie_genre" : "Comedy|Drama",
+        "production_year" : 2005,
+        "budget" : 10307
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8454f"),
+        "id" : 19,
+        "movie_name" : "Frozen Hell (Jäämarssi) ",
+        "movie_genre" : "Documentary|War",
+        "production_year" : 2006,
+        "budget" : 11874
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84550"),
+        "id" : 20,
+        "movie_name" : "The Prince",
+        "movie_genre" : "Action|Thriller",
+        "production_year" : 2006,
+        "budget" : 18051
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84551"),
+        "id" : 21,
+        "movie_name" : "Night of the Hunter, The",
+        "movie_genre" : "Drama|Film-Noir|Thriller",
+        "production_year" : 2004,
+        "budget" : 11233
+}
+Type "it" for more
+>
+>
+>
+>
+> db.users.find({$nor:[{"production_year":{$gt:2000}},{"budget":{$gt:10000}}]}).pretty()
+{ "_id" : ObjectId("619d2b8ed0e4d935d3ddf4b5"), "something" : "nothing" }
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84544"),
+        "id" : 8,
+        "movie_name" : "Return to Me",
+        "movie_genre" : "Drama|Romance",
+        "production_year" : 2000,
+        "budget" : 9676
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8455d"),
+        "id" : 33,
+        "movie_name" : "World Is Not Enough, The",
+        "movie_genre" : "Action|Adventure|Thriller",
+        "production_year" : 1997,
+        "budget" : 9558
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84561"),
+        "id" : 37,
+        "movie_name" : "Malone",
+        "movie_genre" : "Action|Drama|Thriller",
+        "production_year" : 1992,
+        "budget" : 9490
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8456b"),
+        "id" : 47,
+        "movie_name" : "Love Sick Love",
+        "movie_genre" : "Thriller",
+        "production_year" : 1987,
+        "budget" : 9834
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84572"),
+        "id" : 54,
+        "movie_name" : "Save the Tiger",
+        "movie_genre" : "Drama",
+        "production_year" : 1993,
+        "budget" : 9880
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84579"),
+        "id" : 61,
+        "movie_name" : "Take the Trash",
+        "movie_genre" : "Comedy",
+        "production_year" : 1998,
+        "budget" : 9965
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f845d0"),
+        "id" : 148,
+        "movie_name" : "Foolish",
+        "movie_genre" : "Comedy",
+        "production_year" : 1984,
+        "budget" : 9801
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f845db"),
+        "id" : 159,
+        "movie_name" : "That Obscure Object of Desire (Cet obscur objet du désir)",
+        "movie_genre" : "Drama",
+        "production_year" : 1997,
+        "budget" : 9444
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f845e4"),
+        "id" : 168,
+        "movie_name" : "Ivanhoe",
+        "movie_genre" : "Adventure|Drama|Romance",
+        "production_year" : 1995,
+        "budget" : 9973
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84608"),
+        "id" : 204,
+        "movie_name" : "Far from Heaven",
+        "movie_genre" : "Drama|Romance",
+        "production_year" : 1981,
+        "budget" : 9743
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84612"),
+        "id" : 214,
+        "movie_name" : "Chilly Scenes of Winter (Head Over Heels)",
+        "movie_genre" : "Comedy|Drama|Romance",
+        "production_year" : 1994,
+        "budget" : 9632
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84632"),
+        "id" : 246,
+        "movie_name" : "Clear History",
+        "movie_genre" : "Comedy",
+        "production_year" : 1999,
+        "budget" : 9805
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84679"),
+        "id" : 317,
+        "movie_name" : "Profit, The",
+        "movie_genre" : "Drama",
+        "production_year" : 1986,
+        "budget" : 9954
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8467e"),
+        "id" : 322,
+        "movie_name" : "Midnight Meat Train, The",
+        "movie_genre" : "Horror|Mystery|Thriller",
+        "production_year" : 2000,
+        "budget" : 9697
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f846bd"),
+        "id" : 385,
+        "movie_name" : "Children of the Corn V: Fields of Terror",
+        "movie_genre" : "Horror|Thriller",
+        "production_year" : 1998,
+        "budget" : 9537
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f846c7"),
+        "id" : 395,
+        "movie_name" : "Vamp",
+        "movie_genre" : "Comedy|Horror",
+        "production_year" : 1999,
+        "budget" : 9746
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f846d1"),
+        "id" : 405,
+        "movie_name" : "Shaolin Temple 2: Kids from Shaolin (Shao Lin xiao zi) (Kids from Shaolin)",
+        "movie_genre" : "Action|Comedy",
+        "production_year" : 1993,
+        "budget" : 9750
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84707"),
+        "id" : 459,
+        "movie_name" : "Juwanna Mann",
+        "movie_genre" : "Comedy",
+        "production_year" : 1992,
+        "budget" : 9423
+}
+>
+>
+>
+>
+> db.users.find({$or:[{"production_year":{$not:{$eq:2000}}},{"budget":{$not:{$eq:10000}}}]}).pretty(
+{ "_id" : ObjectId("619d2b8ed0e4d935d3ddf4b5"), "something" : "nothing" }
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8453d"),
+        "id" : 1,
+        "movie_name" : "Witness to Murder",
+        "movie_genre" : "Crime|Drama|Film-Noir|Thriller",
+        "production_year" : 2010,
+        "budget" : 16788
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8453e"),
+        "id" : 2,
+        "movie_name" : "Late Phases",
+        "movie_genre" : "Drama|Horror",
+        "production_year" : 2006,
+        "budget" : 18192
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8453f"),
+        "id" : 3,
+        "movie_name" : "Impostors, The",
+        "movie_genre" : "Comedy",
+        "production_year" : 2011,
+        "budget" : 9075
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84540"),
+        "id" : 4,
+        "movie_name" : "Life for Sale (Kotirauha)",
+        "movie_genre" : "Drama",
+        "production_year" : 1988,
+        "budget" : 19674
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84541"),
+        "id" : 5,
+        "movie_name" : "Dilettante, La",
+        "movie_genre" : "Comedy",
+        "production_year" : 1992,
+        "budget" : 13651
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84542"),
+        "id" : 6,
+        "movie_name" : "Joy of Sex",
+        "movie_genre" : "Comedy|Romance",
+        "production_year" : 1997,
+        "budget" : 14336
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84543"),
+        "id" : 7,
+        "movie_name" : "Moog",
+        "movie_genre" : "Documentary|Musical",
+        "production_year" : 2001,
+        "budget" : 11001
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84544"),
+        "id" : 8,
+        "movie_name" : "Return to Me",
+        "movie_genre" : "Drama|Romance",
+        "production_year" : 2000,
+        "budget" : 9676
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84545"),
+        "id" : 9,
+        "movie_name" : "Golden Christmas, A",
+        "movie_genre" : "Children|Comedy|Romance",
+        "production_year" : 1992,
+        "budget" : 17212
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84546"),
+        "id" : 10,
+        "movie_name" : "Sky's the Limit, The",
+        "movie_genre" : "Comedy|Musical|Romance",
+        "production_year" : 2009,
+        "budget" : 18762
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84547"),
+        "id" : 11,
+        "movie_name" : "Body Bags",
+        "movie_genre" : "Comedy|Horror|Sci-Fi|Thriller",
+        "production_year" : 2010,
+        "budget" : 16318
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84548"),
+        "id" : 12,
+        "movie_name" : "Drishyam",
+        "movie_genre" : "Children|Drama|Thriller",
+        "production_year" : 2010,
+        "budget" : 13354
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84549"),
+        "id" : 13,
+        "movie_name" : "Set-Up, The",
+        "movie_genre" : "Drama|Film-Noir|Romance",
+        "production_year" : 2007,
+        "budget" : 11983
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8454a"),
+        "id" : 14,
+        "movie_name" : "Detective (Détective)",
+        "movie_genre" : "Crime|Drama",
+        "production_year" : 2003,
+        "budget" : 19068
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8454b"),
+        "id" : 15,
+        "movie_name" : "Blank Generation, The",
+        "movie_genre" : "Musical",
+        "production_year" : 2001,
+        "budget" : 16500
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8454c"),
+        "id" : 16,
+        "movie_name" : "Evilspeak",
+        "movie_genre" : "Horror|Sci-Fi",
+        "production_year" : 2006,
+        "budget" : 19976
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8454d"),
+        "id" : 17,
+        "movie_name" : "John Mulaney: New In Town",
+        "movie_genre" : "Comedy",
+        "production_year" : 2012,
+        "budget" : 10235
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8454e"),
+        "id" : 18,
+        "movie_name" : "One-Way Ticket to Mombasa (Menolippu Mombasaan)",
+        "movie_genre" : "Comedy|Drama",
+        "production_year" : 2005,
+        "budget" : 10307
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8454f"),
+        "id" : 19,
+        "movie_name" : "Frozen Hell (Jäämarssi) ",
+        "movie_genre" : "Documentary|War",
+        "production_year" : 2006,
+        "budget" : 11874
+}
+Type "it" for more
+>
+>
+>
+> db.users.find({"production_year":{$in:[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010]}}).pretty()
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8453d"),
+        "id" : 1,
+        "movie_name" : "Witness to Murder",
+        "movie_genre" : "Crime|Drama|Film-Noir|Thriller",
+        "production_year" : 2010,
+        "budget" : 16788
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8453e"),
+        "id" : 2,
+        "movie_name" : "Late Phases",
+        "movie_genre" : "Drama|Horror",
+        "production_year" : 2006,
+        "budget" : 18192
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84543"),
+        "id" : 7,
+        "movie_name" : "Moog",
+        "movie_genre" : "Documentary|Musical",
+        "production_year" : 2001,
+        "budget" : 11001
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84544"),
+        "id" : 8,
+        "movie_name" : "Return to Me",
+        "movie_genre" : "Drama|Romance",
+        "production_year" : 2000,
+        "budget" : 9676
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84546"),
+        "id" : 10,
+        "movie_name" : "Sky's the Limit, The",
+        "movie_genre" : "Comedy|Musical|Romance",
+        "production_year" : 2009,
+        "budget" : 18762
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84547"),
+        "id" : 11,
+        "movie_name" : "Body Bags",
+        "movie_genre" : "Comedy|Horror|Sci-Fi|Thriller",
+        "production_year" : 2010,
+        "budget" : 16318
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84548"),
+        "id" : 12,
+        "movie_name" : "Drishyam",
+        "movie_genre" : "Children|Drama|Thriller",
+        "production_year" : 2010,
+        "budget" : 13354
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84549"),
+        "id" : 13,
+        "movie_name" : "Set-Up, The",
+        "movie_genre" : "Drama|Film-Noir|Romance",
+        "production_year" : 2007,
+        "budget" : 11983
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8454a"),
+        "id" : 14,
+        "movie_name" : "Detective (Détective)",
+        "movie_genre" : "Crime|Drama",
+        "production_year" : 2003,
+        "budget" : 19068
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8454b"),
+        "id" : 15,
+        "movie_name" : "Blank Generation, The",
+        "movie_genre" : "Musical",
+        "production_year" : 2001,
+        "budget" : 16500
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8454c"),
+        "id" : 16,
+        "movie_name" : "Evilspeak",
+        "movie_genre" : "Horror|Sci-Fi",
+        "production_year" : 2006,
+        "budget" : 19976
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8454e"),
+        "id" : 18,
+        "movie_name" : "One-Way Ticket to Mombasa (Menolippu Mombasaan)",
+        "movie_genre" : "Comedy|Drama",
+        "production_year" : 2005,
+        "budget" : 10307
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8454f"),
+        "id" : 19,
+        "movie_name" : "Frozen Hell (Jäämarssi) ",
+        "movie_genre" : "Documentary|War",
+        "production_year" : 2006,
+        "budget" : 11874
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84550"),
+        "id" : 20,
+        "movie_name" : "The Prince",
+        "movie_genre" : "Action|Thriller",
+        "production_year" : 2006,
+        "budget" : 18051
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84551"),
+        "id" : 21,
+        "movie_name" : "Night of the Hunter, The",
+        "movie_genre" : "Drama|Film-Noir|Thriller",
+        "production_year" : 2004,
+        "budget" : 11233
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84552"),
+        "id" : 22,
+        "movie_name" : "Suez",
+        "movie_genre" : "Drama|Romance",
+        "production_year" : 2005,
+        "budget" : 15381
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84557"),
+        "id" : 27,
+        "movie_name" : "Kansas City",
+        "movie_genre" : "Crime|Drama|Musical|Thriller",
+        "production_year" : 2005,
+        "budget" : 11656
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84558"),
+        "id" : 28,
+        "movie_name" : "Swimming Pool, The (La piscine)",
+        "movie_genre" : "Crime|Drama",
+        "production_year" : 2007,
+        "budget" : 16412
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84559"),
+        "id" : 29,
+        "movie_name" : "Demon Wind",
+        "movie_genre" : "Horror",
+        "production_year" : 2010,
+        "budget" : 16139
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8455a"),
+        "id" : 30,
+        "movie_name" : "Ernest Goes to School",
+        "movie_genre" : "Children|Comedy|Drama",
+        "production_year" : 2010,
+        "budget" : 12734
+}
+Type "it" for more
+>
+>
+>
+> db.users.find().sort({production_year:-1,movie_name:1}).pretty()
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f846b2"),
+        "id" : 374,
+        "movie_name" : "Grey, The",
+        "movie_genre" : "Action|Drama",
+        "production_year" : 2013,
+        "budget" : 16379
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8462c"),
+        "id" : 240,
+        "movie_name" : "The Lazarus Effect",
+        "movie_genre" : "Horror|Thriller",
+        "production_year" : 2013,
+        "budget" : 14670
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8468e"),
+        "id" : 338,
+        "movie_name" : "$9.99",
+        "movie_genre" : "Animation",
+        "production_year" : 2012,
+        "budget" : 18793
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84629"),
+        "id" : 237,
+        "movie_name" : "Amityville: A New Generation",
+        "movie_genre" : "Horror",
+        "production_year" : 2012,
+        "budget" : 13921
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8455b"),
+        "id" : 31,
+        "movie_name" : "Babylon 5: In the Beginning",
+        "movie_genre" : "Adventure|Sci-Fi",
+        "production_year" : 2012,
+        "budget" : 15828
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f845c0"),
+        "id" : 132,
+        "movie_name" : "Beauty and the Beast (Belle et la bête, La)",
+        "movie_genre" : "Fantasy|Romance",
+        "production_year" : 2012,
+        "budget" : 16180
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f845a4"),
+        "id" : 104,
+        "movie_name" : "Blue Gardenia, The",
+        "movie_genre" : "Crime|Drama|Film-Noir|Thriller",
+        "production_year" : 2012,
+        "budget" : 11695
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84613"),
+        "id" : 215,
+        "movie_name" : "Bride from Hades, The (Botan-dôrô) (Peony Lantern) (Tale of Peonies and Lanterns, A)",
+        "movie_genre" : "Horror",
+        "production_year" : 2012,
+        "budget" : 13881
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8465a"),
+        "id" : 286,
+        "movie_name" : "Easy Virtue",
+        "movie_genre" : "Drama",
+        "production_year" : 2012,
+        "budget" : 18718
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84653"),
+        "id" : 279,
+        "movie_name" : "Grin Without a Cat, A (Fond de l'air est rouge, Le)",
+        "movie_genre" : "Documentary",
+        "production_year" : 2012,
+        "budget" : 18783
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84680"),
+        "id" : 324,
+        "movie_name" : "Half of a Yellow Sun",
+        "movie_genre" : "Drama|Romance",
+        "production_year" : 2012,
+        "budget" : 14494
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84656"),
+        "id" : 282,
+        "movie_name" : "Haxan: Witchcraft Through the Ages (a.k.a. The Witches)",
+        "movie_genre" : "Documentary|Horror",
+        "production_year" : 2012,
+        "budget" : 19090
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84717"),
+        "id" : 475,
+        "movie_name" : "Inspector Gadget",
+        "movie_genre" : "Action|Adventure|Children|Comedy",
+        "production_year" : 2012,
+        "budget" : 10437
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f846dc"),
+        "id" : 416,
+        "movie_name" : "Intimidation",
+        "movie_genre" : "Crime|Drama|Mystery",
+        "production_year" : 2012,
+        "budget" : 16360
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f846cf"),
+        "id" : 403,
+        "movie_name" : "Jellyfish (Meduzot)",
+        "movie_genre" : "Drama",
+        "production_year" : 2012,
+        "budget" : 12070
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8454d"),
+        "id" : 17,
+        "movie_name" : "John Mulaney: New In Town",
+        "movie_genre" : "Comedy",
+        "production_year" : 2012,
+        "budget" : 10235
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84652"),
+        "id" : 278,
+        "movie_name" : "Lakeboat",
+        "movie_genre" : "Comedy",
+        "production_year" : 2012,
+        "budget" : 13306
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8470b"),
+        "id" : 463,
+        "movie_name" : "Last Stop for Paul",
+        "movie_genre" : "Comedy",
+        "production_year" : 2012,
+        "budget" : 11694
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f845a2"),
+        "id" : 102,
+        "movie_name" : "Miss Annie Rooney",
+        "movie_genre" : "Drama",
+        "production_year" : 2012,
+        "budget" : 9013
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f846f4"),
+        "id" : 440,
+        "movie_name" : "Nothing to Lose",
+        "movie_genre" : "Crime|Thriller",
+        "production_year" : 2012,
+        "budget" : 11701
+}
+Type "it" for more
+>
+>
+>
+> db.users.find().skip(10).limit(5).pretty()
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84546"),
+        "id" : 10,
+        "movie_name" : "Sky's the Limit, The",
+        "movie_genre" : "Comedy|Musical|Romance",
+        "production_year" : 2009,
+        "budget" : 18762
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84547"),
+        "id" : 11,
+        "movie_name" : "Body Bags",
+        "movie_genre" : "Comedy|Horror|Sci-Fi|Thriller",
+        "production_year" : 2010,
+        "budget" : 16318
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84548"),
+        "id" : 12,
+        "movie_name" : "Drishyam",
+        "movie_genre" : "Children|Drama|Thriller",
+        "production_year" : 2010,
+        "budget" : 13354
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f84549"),
+        "id" : 13,
+        "movie_name" : "Set-Up, The",
+        "movie_genre" : "Drama|Film-Noir|Romance",
+        "production_year" : 2007,
+        "budget" : 11983
+}
+{
+        "_id" : ObjectId("619d2bb7a07e9e8ad2f8454a"),
+        "id" : 14,
+        "movie_name" : "Detective (Détective)",
+        "movie_genre" : "Crime|Drama",
+        "production_year" : 2003,
+        "budget" : 19068
+}
+>
+>
+> db.users.remove({"movie_genre":1}).limit(10)
+WriteResult({ "nRemoved" : 10 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
