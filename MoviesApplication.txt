@@ -2058,8 +2058,8 @@ Type "it" for more
 }
 >
 >
-> db.users.remove({"movie_genre":1}).limit(10)
-WriteResult({ "nRemoved" : 10 })
+>db.movies.find({}).sort({production_year:-1, movie_name:-1}).pretty().limit(10).forEach(function(doc){db.movies.update({_id: doc._id}, {$unset:{"movie_genre": ""}})})
+
 
 
 
